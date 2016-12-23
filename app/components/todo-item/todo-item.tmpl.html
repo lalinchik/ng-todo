@@ -1,0 +1,10 @@
+<li>
+    <div class="view">
+        <label ng-click="$ctrl.edit=true" ng-if="!$ctrl.edit">{{$ctrl.todo.title}}</label>
+        <input ng-if="$ctrl.edit"
+               ng-model="$ctrl.todo.title"
+               ng-change="$ctrl.update($ctrl.todo)"
+               ng-model-options="{updateOn: 'default blur', debounce: {'default': 500, 'blur': 0}}">
+        <button class="destroy" ng-click="$ctrl.remove()"></button>
+    </div>
+</li>
